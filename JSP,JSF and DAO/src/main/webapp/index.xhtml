@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+  <!--  File: index.xhtml -->
+  <!--  Author (original):course materials (19W) CST 8277 -->
+  <!-- Author: Student 040-884087  -->
+  <!-- Description: My Contact class is model class store the values to pass in database that user inputs  -->
+  <!-- @authors  Vaibhav Jain -->
+
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+<h:head>
+    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" http-equiv="X-UA-Conpatible" />
+    <h:outputStylesheet library="css" name="bootstrap.min.css" />
+    <title>Contacts</title>
+    <style type="text/css">
+        .tableUpdated {
+            width: 90% !important;
+            margin: 17px 58px 0 !important;
+        }
+        .btnSpace {
+            margin: 17px;
+        }     
+    </style>
+</h:head>
+<h:body>
+  <center><h2><h:outputText value="Contacts List"/></h2></center>
+  <h:form>
+   <h:dataTable value="#{contactsController.contacts}" var="contact" styleClass="table table-striped table-bordered tableUpdated">
+    <h:column>
+     <f:facet name="header">
+      <h:outputText value="ID:-"/>
+     </f:facet>
+     <h:outputText value="#{contact.id}"/>
+    </h:column>
+    <h:column>
+     <f:facet name="header">
+      <h:outputText value="Firstname"/>
+     </f:facet>
+     <h:outputText value="#{contact.firstName}"/>
+    </h:column><h:column>
+     <f:facet name="header">
+      <h:outputText value="Lastname"/>
+     </f:facet>
+     <h:outputText value="#{contact.lastName}"/>
+    </h:column>
+    <h:column>
+     <f:facet name="header">
+      <h:outputText value="Email"/>
+     </f:facet>
+     <h:outputText value="#{contact.email}"/>
+    </h:column>
+    <h:column>
+     <f:facet name="header">
+      <h:outputText value="Street"/>
+     </f:facet>
+     <h:outputText value="#{contact.street}"/>
+    </h:column>
+    <h:column>
+     <f:facet name="header">
+      <h:outputText value="City"/>
+     </f:facet>
+     <h:outputText value="#{contact.city}"/>
+    </h:column>
+    <h:column>
+     <f:facet name="header">
+      <h:outputText value="Zip/Postal Code"/>
+     </f:facet>
+     <h:outputText value="#{contact.postal}"/>
+    </h:column>
+    <h:column>
+     <f:facet name="header">
+      <h:outputText value="Country"/>
+     </f:facet>
+     <h:outputText value="#{contact.country}"/>
+    </h:column>
+    <h:column>
+     <f:facet name="header">Update</f:facet>
+    <h:commandButton action="#{contactsController.getContactDetailById(contact.id)}" value="Update" class="btn btn-primary" />
+    </h:column>
+      <h:column>
+     <f:facet name="header">Delete</f:facet>
+     <h:commandButton action="#{contactsController.deleteContactRecord(contact.id)}" value="Delete" class="btn btn-danger" />
+            </h:column>
+   </h:dataTable>
+   <h:column>
+     <f:facet name="header">Add Contacts</f:facet>
+    <center> <h:commandButton action="AddRecord.xhtml" value="   Create new record " class="btn btn-primary" /></center>
+            </h:column>
+  </h:form>
+  <h3><h:outputText value="by:- Vaibhav Jain"/></h3>
+ </h:body>
+</html>

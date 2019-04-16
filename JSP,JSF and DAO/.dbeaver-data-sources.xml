@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-sources>
+	<data-source id="h2_server-16847ae6d65-1f5e360dcb37be60" provider="generic" driver="h2_server" name="H2 - Contacts" save-password="true" show-system-objects="true" show-util-objects="true" read-only="false">
+		<connection host="localhost" port="12345" server="" database="~/contacts;IFEXISTS=TRUE;MODE=MySQL" url="jdbc:h2:tcp://localhost:12345/~/contacts;IFEXISTS=TRUE;MODE=MySQL" user="sa" password="AwUVM1ZMVhJl8w==" type="dev">
+			<network-handler type="TUNNEL" id="ssh_tunnel" enabled="false" save-password="true">
+				<property name="sshConnectTimeout" value="10000"/>
+				<property name="authType" value="PASSWORD"/>
+				<property name="port" value="22"/>
+				<property name="implementation" value="jsch"/>
+			</network-handler>
+			<network-handler type="PROXY" id="socks_proxy" enabled="false" save-password="true">
+				<property name="socks-port" value="1080"/>
+			</network-handler>
+		</connection>
+	</data-source>
+	<filters/>
+</data-sources>
